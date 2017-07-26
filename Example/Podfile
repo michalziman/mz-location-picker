@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MZLocationPicker_Example' do
+  pod 'MZLocationPicker', :path => '../'
+
+  target 'MZLocationPicker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
