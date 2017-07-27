@@ -1,0 +1,6 @@
+framework module MZLocationPicker {
+  umbrella header "MZLocationPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

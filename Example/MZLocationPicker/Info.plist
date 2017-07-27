@@ -35,5 +35,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>If location is provided to application, location picker will have button to locate device&apos;s position.</string>
 </dict>
 </plist>

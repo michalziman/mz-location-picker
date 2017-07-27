@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import CoreLocation
+import MZLocationPicker
 
 class ViewController: UIViewController {
+    @IBOutlet weak var chooseLocationButton: UIButton!
+    @IBOutlet weak var chosenLocationLabel: UILabel!
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,5 +32,32 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func chooseLocation(_ sender: Any) {
+        let picker = MZLocationPickerController()
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
 }
 
+extension ViewController: MZLocationPickerDelegate {
+    func locationPickerDidCancelPicking(_ locationPicker: MZLocationPickerController) {
+        chosenLocationLabel.text = "Picking canceled"
+    }
+    func locationPicker(_ locationPicker: MZLocationPickerController, didPickLocation location: MZLocation) {
+        let name: String
+        if let nameFromLocation = location.name {
+            name = nameFromLocation + " "
+        } else {
+            name = ""
+        }
+        let address: String
+        if let addressFromLocation = location.address {
+            address = (!name.isEmpty ? "- " : "") + addressFromLocation + " "
+        } else {
+            address = ""
+        }
+        let coordinates = "(\(location.coordinate.latitude) \(location.coordinate.longitude))"
+        chosenLocationLabel.text = "Chosen location: " + name + address + coordinates
+    }
+}

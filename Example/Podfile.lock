@@ -1,0 +1,16 @@
+PODS:
+  - MZLocationPicker (0.1.0)
+
+DEPENDENCIES:
+  - MZLocationPicker (from `../`)
+
+EXTERNAL SOURCES:
+  MZLocationPicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MZLocationPicker: 6a543be3b08ac1f8496c4947690e4c3200c24972
+
+PODFILE CHECKSUM: 4136f8526a75d5e89052951121e245d05dfe6a46
+
+COCOAPODS: 1.2.1

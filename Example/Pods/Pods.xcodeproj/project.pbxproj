@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35D5A3CE793337568D2AF0A45A74D9CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		4E43D19C58468A138AD980543687A7E9 /* MZLocationPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A30D0A59440A83C4282B736F3EF78794 /* MZLocationPicker-dummy.m */; };
+		77A1A11DCE1772F9E2C891E0F9865DA1 /* Pods-MZLocationPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A123F748935C763158CADEA24B268 /* Pods-MZLocationPicker_Example-dummy.m */; };
+		AE4D8BD31F28E64D005545FA /* MZLocationPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D8BD21F28E64D005545FA /* MZLocationPickerController.swift */; };
+		AE4D8BD51F28EF86005545FA /* MZLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D8BD41F28EF86005545FA /* MZLocation.swift */; };
+		AE4D8BD71F28EFB0005545FA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4D8BD61F28EFB0005545FA /* MapKit.framework */; };
+		AE4D8BFD1F29C45F005545FA /* MZLocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D8BFC1F29C45F005545FA /* MZLocationPickerView.swift */; };
+		AE4D8C011F29D747005545FA /* LocationPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4D8BFB1F29C443005545FA /* LocationPickerView.xib */; };
+		B9A950BD70D8977E9F97DDBD77260E00 /* Pods-MZLocationPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A14A078B586150CD5D0B584A2970E7 /* Pods-MZLocationPicker_Tests-dummy.m */; };
+		C6802C46C43A806D8C70992F67538B8D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C775B2311A153A208E67B0E10BC2BBEC /* Pods-MZLocationPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8213DFBE370BEB4EDF730801029EEF39 /* Pods-MZLocationPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD7A31D1332167ED720155997708CB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E421293CD8C05D14DDF367372DE50370 /* Pods-MZLocationPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8379F67746BFF939B078E80D047CD25D /* Pods-MZLocationPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E55A4F9A75B82E125BCADA592910EA30 /* MZLocationPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8820B3801ACDA5D0F61B93B40F5FC0CA /* MZLocationPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D4B334296E3D3B28C6759C9012B1265 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78EF65E724C771B887B934C2306D6842;
+			remoteInfo = MZLocationPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C5E60290DE709603E113D52CF6A4B26 /* Pods-MZLocationPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MZLocationPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		24A54C1997EA5116313F3916E2F06942 /* Pods-MZLocationPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MZLocationPicker_Tests.modulemap"; sourceTree = "<group>"; };
+		25FE40CD508DF33507F821495F156AC6 /* Pods-MZLocationPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MZLocationPicker_Example.modulemap"; sourceTree = "<group>"; };
+		26ED9003B74DEA50BAA8F617A6335EEE /* Pods-MZLocationPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MZLocationPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
+		27A14A078B586150CD5D0B584A2970E7 /* Pods-MZLocationPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MZLocationPicker_Tests-dummy.m"; sourceTree = "<group>"; };
+		2A436B86AD59465E0A62ED0138C38D68 /* Pods-MZLocationPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MZLocationPicker_Example-resources.sh"; sourceTree = "<group>"; };
+		488E40883AA8D224291F5D7DE2CCDE2D /* Pods-MZLocationPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MZLocationPicker_Tests-resources.sh"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7F00EE32074D10A7E05B181346CFBCD3 /* Pods-MZLocationPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MZLocationPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		80E678752E8D794F7704B4838A07B8DA /* Pods-MZLocationPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MZLocationPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8213DFBE370BEB4EDF730801029EEF39 /* Pods-MZLocationPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MZLocationPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8379F67746BFF939B078E80D047CD25D /* Pods-MZLocationPicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MZLocationPicker_Example-umbrella.h"; sourceTree = "<group>"; };
+		84FFD04CB2BDA6647E00B095271E57F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8820B3801ACDA5D0F61B93B40F5FC0CA /* MZLocationPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MZLocationPicker-umbrella.h"; sourceTree = "<group>"; };
+		89BA1BFC0AE456B25510BE25C22516A9 /* Pods-MZLocationPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MZLocationPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		8AEE6FA81AEC9743EAEBE5BF6FC96613 /* MZLocationPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MZLocationPicker.modulemap; sourceTree = "<group>"; };
+		8BC40B482966A4C6F134E1097B8893AD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90485BCB2D7555369778CAB0B8CCD26F /* MZLocationPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MZLocationPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90940560F424D031D94F6DFE8ECB499E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92275DCB5F28FE2CDF8E43BEC417A030 /* Pods-MZLocationPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MZLocationPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A30D0A59440A83C4282B736F3EF78794 /* MZLocationPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MZLocationPicker-dummy.m"; sourceTree = "<group>"; };
+		AE4D8BD21F28E64D005545FA /* MZLocationPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocationPickerController.swift; sourceTree = "<group>"; };
+		AE4D8BD41F28EF86005545FA /* MZLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocation.swift; sourceTree = "<group>"; };
+		AE4D8BD61F28EFB0005545FA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE4D8BFB1F29C443005545FA /* LocationPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPickerView.xib; sourceTree = "<group>"; };
+		AE4D8BFC1F29C45F005545FA /* MZLocationPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocationPickerView.swift; sourceTree = "<group>"; };
+		AF6804EE45415C4433D7670F310C2A24 /* MZLocationPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MZLocationPicker-prefix.pch"; sourceTree = "<group>"; };
+		B0EFF71B2CBAB07714C38FD7C3B0D84D /* Pods_MZLocationPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZLocationPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2520DB6D0F542F9FD60C41EF193C52 /* Pods-MZLocationPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MZLocationPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C9B985776EA5718394F77E9CD1323B30 /* Pods_MZLocationPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZLocationPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D092E5D6B8AEC49B64E9245451FCBD00 /* Pods-MZLocationPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MZLocationPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DB4A123F748935C763158CADEA24B268 /* Pods-MZLocationPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MZLocationPicker_Example-dummy.m"; sourceTree = "<group>"; };
+		EBDDCDF8E393B99D8DA6B02CAD447220 /* MZLocationPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MZLocationPicker.xcconfig; sourceTree = "<group>"; };
+		EDD613E5A1865D16DA7038167E8ACDF1 /* Pods-MZLocationPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MZLocationPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F2389403E81DA14448FBC3C49773A0CC /* Pods-MZLocationPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MZLocationPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		129618438E2787E98DA6CA56D5FDFFF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4D8BD71F28EFB0005545FA /* MapKit.framework in Frameworks */,
+				C6802C46C43A806D8C70992F67538B8D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		902752E2725D613AB5FAE4D1B2722E6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD7A31D1332167ED720155997708CB08 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFADFE201EA00F7A4151FDB2F479C9D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35D5A3CE793337568D2AF0A45A74D9CE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B2CA53141DFF5195B3B2C8F84485588 /* MZLocationPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1DFE5520BA60E59052E29841F4C4A702 /* Classes */,
+				AE4D8BFB1F29C443005545FA /* LocationPickerView.xib */,
+			);
+			path = MZLocationPicker;
+			sourceTree = "<group>";
+		};
+		10C8375D78811A075D8A2F8975737640 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90485BCB2D7555369778CAB0B8CCD26F /* MZLocationPicker.framework */,
+				C9B985776EA5718394F77E9CD1323B30 /* Pods_MZLocationPicker_Example.framework */,
+				B0EFF71B2CBAB07714C38FD7C3B0D84D /* Pods_MZLocationPicker_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DFE5520BA60E59052E29841F4C4A702 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D8BD41F28EF86005545FA /* MZLocation.swift */,
+				AE4D8BD21F28E64D005545FA /* MZLocationPickerController.swift */,
+				AE4D8BFC1F29C45F005545FA /* MZLocationPickerView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		34F62A41CBE1FBEE38C269E3FBC68AB7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90940560F424D031D94F6DFE8ECB499E /* Info.plist */,
+				8AEE6FA81AEC9743EAEBE5BF6FC96613 /* MZLocationPicker.modulemap */,
+				EBDDCDF8E393B99D8DA6B02CAD447220 /* MZLocationPicker.xcconfig */,
+				A30D0A59440A83C4282B736F3EF78794 /* MZLocationPicker-dummy.m */,
+				AF6804EE45415C4433D7670F310C2A24 /* MZLocationPicker-prefix.pch */,
+				8820B3801ACDA5D0F61B93B40F5FC0CA /* MZLocationPicker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MZLocationPicker";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				DA9298A213A56589DFA49C4D9C14EC76 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				10C8375D78811A075D8A2F8975737640 /* Products */,
+				E3DB2B1952C3ED035DFC133077B2C214 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9380376EDA05B4FBBDDF1C688E664735 /* MZLocationPicker */ = {
+			isa = PBXGroup;
+			children = (
+				0B2CA53141DFF5195B3B2C8F84485588 /* MZLocationPicker */,
+				34F62A41CBE1FBEE38C269E3FBC68AB7 /* Support Files */,
+			);
+			name = MZLocationPicker;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		B8C7702AABCB08AE7442F221880D60BD /* Pods-MZLocationPicker_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8BC40B482966A4C6F134E1097B8893AD /* Info.plist */,
+				24A54C1997EA5116313F3916E2F06942 /* Pods-MZLocationPicker_Tests.modulemap */,
+				80E678752E8D794F7704B4838A07B8DA /* Pods-MZLocationPicker_Tests-acknowledgements.markdown */,
+				7F00EE32074D10A7E05B181346CFBCD3 /* Pods-MZLocationPicker_Tests-acknowledgements.plist */,
+				27A14A078B586150CD5D0B584A2970E7 /* Pods-MZLocationPicker_Tests-dummy.m */,
+				89BA1BFC0AE456B25510BE25C22516A9 /* Pods-MZLocationPicker_Tests-frameworks.sh */,
+				488E40883AA8D224291F5D7DE2CCDE2D /* Pods-MZLocationPicker_Tests-resources.sh */,
+				8213DFBE370BEB4EDF730801029EEF39 /* Pods-MZLocationPicker_Tests-umbrella.h */,
+				1C5E60290DE709603E113D52CF6A4B26 /* Pods-MZLocationPicker_Tests.debug.xcconfig */,
+				92275DCB5F28FE2CDF8E43BEC417A030 /* Pods-MZLocationPicker_Tests.release.xcconfig */,
+			);
+			name = "Pods-MZLocationPicker_Tests";
+			path = "Target Support Files/Pods-MZLocationPicker_Tests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D8BD61F28EFB0005545FA /* MapKit.framework */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DA9298A213A56589DFA49C4D9C14EC76 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9380376EDA05B4FBBDDF1C688E664735 /* MZLocationPicker */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		E3DB2B1952C3ED035DFC133077B2C214 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E939A6F3EA33C93264A81A75CE8751A5 /* Pods-MZLocationPicker_Example */,
+				B8C7702AABCB08AE7442F221880D60BD /* Pods-MZLocationPicker_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E939A6F3EA33C93264A81A75CE8751A5 /* Pods-MZLocationPicker_Example */ = {
+			isa = PBXGroup;
+			children = (
+				84FFD04CB2BDA6647E00B095271E57F2 /* Info.plist */,
+				25FE40CD508DF33507F821495F156AC6 /* Pods-MZLocationPicker_Example.modulemap */,
+				EDD613E5A1865D16DA7038167E8ACDF1 /* Pods-MZLocationPicker_Example-acknowledgements.markdown */,
+				F2389403E81DA14448FBC3C49773A0CC /* Pods-MZLocationPicker_Example-acknowledgements.plist */,
+				DB4A123F748935C763158CADEA24B268 /* Pods-MZLocationPicker_Example-dummy.m */,
+				26ED9003B74DEA50BAA8F617A6335EEE /* Pods-MZLocationPicker_Example-frameworks.sh */,
+				2A436B86AD59465E0A62ED0138C38D68 /* Pods-MZLocationPicker_Example-resources.sh */,
+				8379F67746BFF939B078E80D047CD25D /* Pods-MZLocationPicker_Example-umbrella.h */,
+				D092E5D6B8AEC49B64E9245451FCBD00 /* Pods-MZLocationPicker_Example.debug.xcconfig */,
+				BF2520DB6D0F542F9FD60C41EF193C52 /* Pods-MZLocationPicker_Example.release.xcconfig */,
+			);
+			name = "Pods-MZLocationPicker_Example";
+			path = "Target Support Files/Pods-MZLocationPicker_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		27A45C9CEECAB23849C9B4E1025E99D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E421293CD8C05D14DDF367372DE50370 /* Pods-MZLocationPicker_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AAAE0B664779818CFE9836D9D3B342 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E55A4F9A75B82E125BCADA592910EA30 /* MZLocationPicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6AAEDE05496AD0EEDC1B60BEE8ED4EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C775B2311A153A208E67B0E10BC2BBEC /* Pods-MZLocationPicker_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		78EF65E724C771B887B934C2306D6842 /* MZLocationPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87356897496A07473CC6D2A808CCCB0B /* Build configuration list for PBXNativeTarget "MZLocationPicker" */;
+			buildPhases = (
+				388F158DFB99EDCAE6FC2A274D4CF19A /* Sources */,
+				129618438E2787E98DA6CA56D5FDFFF8 /* Frameworks */,
+				83AAAE0B664779818CFE9836D9D3B342 /* Headers */,
+				AE4D8C001F29D73F005545FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MZLocationPicker;
+			productName = MZLocationPicker;
+			productReference = 90485BCB2D7555369778CAB0B8CCD26F /* MZLocationPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7A0E5D42C52D6A83A0E4C7B577447166 /* Pods-MZLocationPicker_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F473773E52177167239460EF21E65E0F /* Build configuration list for PBXNativeTarget "Pods-MZLocationPicker_Tests" */;
+			buildPhases = (
+				AD449459A1169782290E76EBC3381B84 /* Sources */,
+				902752E2725D613AB5FAE4D1B2722E6E /* Frameworks */,
+				F6AAEDE05496AD0EEDC1B60BEE8ED4EA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MZLocationPicker_Tests";
+			productName = "Pods-MZLocationPicker_Tests";
+			productReference = B0EFF71B2CBAB07714C38FD7C3B0D84D /* Pods_MZLocationPicker_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EF267842355810F6FF526810E9964805 /* Pods-MZLocationPicker_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E211FB7320B0AF8397E1E86F6D67D29 /* Build configuration list for PBXNativeTarget "Pods-MZLocationPicker_Example" */;
+			buildPhases = (
+				4A686B3239A208A5CD667EB0EADF4526 /* Sources */,
+				BFADFE201EA00F7A4151FDB2F479C9D1 /* Frameworks */,
+				27A45C9CEECAB23849C9B4E1025E99D3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C34E488940C8487D35B63A52B6D9C593 /* PBXTargetDependency */,
+			);
+			name = "Pods-MZLocationPicker_Example";
+			productName = "Pods-MZLocationPicker_Example";
+			productReference = C9B985776EA5718394F77E9CD1323B30 /* Pods_MZLocationPicker_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 10C8375D78811A075D8A2F8975737640 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78EF65E724C771B887B934C2306D6842 /* MZLocationPicker */,
+				EF267842355810F6FF526810E9964805 /* Pods-MZLocationPicker_Example */,
+				7A0E5D42C52D6A83A0E4C7B577447166 /* Pods-MZLocationPicker_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE4D8C001F29D73F005545FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4D8C011F29D747005545FA /* LocationPickerView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		388F158DFB99EDCAE6FC2A274D4CF19A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E43D19C58468A138AD980543687A7E9 /* MZLocationPicker-dummy.m in Sources */,
+				AE4D8BD31F28E64D005545FA /* MZLocationPickerController.swift in Sources */,
+				AE4D8BFD1F29C45F005545FA /* MZLocationPickerView.swift in Sources */,
+				AE4D8BD51F28EF86005545FA /* MZLocation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A686B3239A208A5CD667EB0EADF4526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77A1A11DCE1772F9E2C891E0F9865DA1 /* Pods-MZLocationPicker_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD449459A1169782290E76EBC3381B84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9A950BD70D8977E9F97DDBD77260E00 /* Pods-MZLocationPicker_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C34E488940C8487D35B63A52B6D9C593 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MZLocationPicker;
+			target = 78EF65E724C771B887B934C2306D6842 /* MZLocationPicker */;
+			targetProxy = 5D4B334296E3D3B28C6759C9012B1265 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		32EB702CB38F1C7224DEA7C99A624EFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF2520DB6D0F542F9FD60C41EF193C52 /* Pods-MZLocationPicker_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MZLocationPicker_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MZLocationPicker_Example/Pods-MZLocationPicker_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MZLocationPicker_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		70866FA85EF7D931AD519173B53D5120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBDDCDF8E393B99D8DA6B02CAD447220 /* MZLocationPicker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MZLocationPicker/MZLocationPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MZLocationPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MZLocationPicker/MZLocationPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MZLocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80EF2B42E8ECC2E25F93676B755D41B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92275DCB5F28FE2CDF8E43BEC417A030 /* Pods-MZLocationPicker_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MZLocationPicker_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MZLocationPicker_Tests/Pods-MZLocationPicker_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MZLocationPicker_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A57A9270BFC679F39E719F40E3776194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D092E5D6B8AEC49B64E9245451FCBD00 /* Pods-MZLocationPicker_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MZLocationPicker_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MZLocationPicker_Example/Pods-MZLocationPicker_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MZLocationPicker_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ABE6138ED4C2D0BC15B77B3CA5037714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C5E60290DE709603E113D52CF6A4B26 /* Pods-MZLocationPicker_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MZLocationPicker_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MZLocationPicker_Tests/Pods-MZLocationPicker_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MZLocationPicker_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1F58A34076D9EABAF00C8204AF6A99B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBDDCDF8E393B99D8DA6B02CAD447220 /* MZLocationPicker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MZLocationPicker/MZLocationPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MZLocationPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MZLocationPicker/MZLocationPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MZLocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E211FB7320B0AF8397E1E86F6D67D29 /* Build configuration list for PBXNativeTarget "Pods-MZLocationPicker_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57A9270BFC679F39E719F40E3776194 /* Debug */,
+				32EB702CB38F1C7224DEA7C99A624EFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87356897496A07473CC6D2A808CCCB0B /* Build configuration list for PBXNativeTarget "MZLocationPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1F58A34076D9EABAF00C8204AF6A99B /* Debug */,
+				70866FA85EF7D931AD519173B53D5120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F473773E52177167239460EF21E65E0F /* Build configuration list for PBXNativeTarget "Pods-MZLocationPicker_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE6138ED4C2D0BC15B77B3CA5037714 /* Debug */,
+				80EF2B42E8ECC2E25F93676B755D41B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
