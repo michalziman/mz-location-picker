@@ -25,10 +25,25 @@ class MZLocationPickerView: UIView {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var chosenLocationView: UIView!
+    @IBOutlet weak var chosenLocationLabel: UILabel!
+    @IBOutlet weak var useButton: UIButton!
     
     @IBOutlet var showSearchConstraint: NSLayoutConstraint!
     @IBOutlet var showChosenLocationConstraint: NSLayoutConstraint!
     
+    var chosenLocation: CLLocation? = nil {
+        didSet {
+            guard let cl = chosenLocation else {
+                return
+            }
+            
+            // Replace annotation with new one
+            mapView.removeAnnotations(mapView.annotations)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = cl.coordinate
+            mapView.addAnnotation(annotation)
+        }
+    }
     var isShowingLocateMe: Bool {
         set {
             navigationItem.leftBarButtonItem = newValue ? MKUserTrackingBarButtonItem(mapView: mapView) : nil

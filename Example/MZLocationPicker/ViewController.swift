@@ -47,17 +47,17 @@ extension ViewController: MZLocationPickerDelegate {
     func locationPicker(_ locationPicker: MZLocationPickerController, didPickLocation location: MZLocation) {
         let name: String
         if let nameFromLocation = location.name {
-            name = nameFromLocation + " "
+            name = nameFromLocation + "\n"
         } else {
             name = ""
         }
         let address: String
         if let addressFromLocation = location.address {
-            address = (!name.isEmpty ? "- " : "") + addressFromLocation + " "
+            address = (!name.isEmpty ? "-\n" : "") + addressFromLocation + "\n"
         } else {
             address = ""
         }
         let coordinates = "(\(location.coordinate.latitude) \(location.coordinate.longitude))"
-        chosenLocationLabel.text = "Chosen location: " + name + address + coordinates
+        chosenLocationLabel.text = "Chosen location:\n" + name + address + coordinates
     }
 }
