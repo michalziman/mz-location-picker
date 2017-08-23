@@ -14,6 +14,7 @@ fileprivate struct Constants {
     static let bottomShadowOffset: CGSize = CGSize(width: 0, height: -3)
     static let topShadowOffset: CGSize = CGSize(width: 0, height: 3)
     static let shadowRadius: CGFloat = 2
+    static let animationDuration: TimeInterval = 0.15
 }
 
 class MZLocationPickerView: UIView {
@@ -27,6 +28,7 @@ class MZLocationPickerView: UIView {
     @IBOutlet weak var chosenLocationView: UIView!
     @IBOutlet weak var chosenLocationLabel: UILabel!
     @IBOutlet weak var useButton: UIButton!
+    
     
     @IBOutlet var showSearchConstraint: NSLayoutConstraint!
     @IBOutlet var showChosenLocationConstraint: NSLayoutConstraint!
@@ -44,12 +46,32 @@ class MZLocationPickerView: UIView {
             mapView.addAnnotation(annotation)
         }
     }
+    var chosenLocationName: String? = nil {
+        didSet {
+            chosenLocationLabel.text = chosenLocationName
+            showChosenLocationConstraint.isActive = true
+            UIView.animate(withDuration: Constants.animationDuration) {
+                self.layoutIfNeeded()
+            }
+        }
+    }
     var isShowingLocateMe: Bool {
         set {
             navigationItem.leftBarButtonItem = newValue ? MKUserTrackingBarButtonItem(mapView: mapView) : nil
         }
         get {
             return (navigationItem.leftBarButtonItem != nil)
+        }
+    }
+    var isShowingSearch: Bool {
+        set {
+            showSearchConstraint.isActive = newValue
+            UIView.animate(withDuration: Constants.animationDuration) {
+                self.layoutIfNeeded()
+            }
+        }
+        get {
+            return showSearchConstraint.isActive
         }
     }
     
@@ -88,5 +110,24 @@ class MZLocationPickerView: UIView {
         
         showSearchConstraint.isActive = false
         showChosenLocationConstraint.isActive = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+    }
+    
+    func keyboardWillShow(_ notification:Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            showSearchConstraint.constant = keyboardRectangle.height
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
+extension MZLocationPickerView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        endEditing(true)
     }
 }

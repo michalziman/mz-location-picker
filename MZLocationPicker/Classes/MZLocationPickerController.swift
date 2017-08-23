@@ -41,27 +41,28 @@ public class MZLocationPickerController: UIViewController {
         
         let contentView = MZLocationPickerView(frame: view.bounds)
         locationPickerView = contentView
-        view.addSubview(contentView)
+        view.addSubview(locationPickerView)
 
-        contentView.isShowingLocateMe = (CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
-        contentView.cancelButton.target = self
-        contentView.cancelButton.action = #selector(cancelPicking(_:))
-        contentView.useButton.addTarget(self, action: #selector(confirmPicking(_:)), for: .touchUpInside)
-        contentView.mapView.delegate = self
+        locationPickerView.isShowingLocateMe = (CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
+        locationPickerView.cancelButton.target = self
+        locationPickerView.cancelButton.action = #selector(cancelPicking(_:))
+        locationPickerView.useButton.addTarget(self, action: #selector(confirmPicking(_:)), for: .touchUpInside)
+        locationPickerView.mapView.delegate = self
         
         let tapOnMap = UITapGestureRecognizer(target: self, action: #selector(tapSelectedLocation(_:)))
         tapOnMap.delegate = self
-        contentView.mapView.addGestureRecognizer(tapOnMap)
+        locationPickerView.mapView.addGestureRecognizer(tapOnMap)
         
         let constraints = [
-            NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: contentView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: contentView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: contentView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0)
+            NSLayoutConstraint(item: locationPickerView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: locationPickerView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: locationPickerView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: locationPickerView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0)
         ]
         view.addConstraints(constraints)
         
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        locationPickerView.navigationBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        locationPickerView.searchBar.delegate = self
     }
     
     override public func didReceiveMemoryWarning() {
@@ -95,6 +96,8 @@ public class MZLocationPickerController: UIViewController {
     }
     
     func selectOnCoordinates(_ coordinates: CLLocationCoordinate2D) {
+        hideKeyboard()
+        
         let cl = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
         location = MZLocation(coordinate: coordinates)
         locationPickerView.chosenLocation = cl
@@ -103,24 +106,20 @@ public class MZLocationPickerController: UIViewController {
         geocoder.reverseGeocodeLocation(cl) { response, error in
             if let e = error as? CLError, e.code != .geocodeCanceled {
                 print("MZLocationPicker:\(#function): \(e)")
-                self.locationPickerView.chosenLocationLabel.text = cl.formattedCoordinates
+                self.locationPickerView.chosenLocationName = cl.formattedCoordinates
                 self.location = MZLocation(coordinate: coordinates)
             } else if let placemark = response?.first {
                 let name = placemark.areasOfInterest?.first
                 let address = self.getAddress(placemark: placemark)
                 self.location = MZLocation(coordinate: coordinates, name: name, address: address)
-                if let a = address {
-                    self.locationPickerView.chosenLocationLabel.text = a
+                if let a = address, !a.isEmpty {
+                    self.locationPickerView.chosenLocationName = a
+                } else {
+                    self.locationPickerView.chosenLocationName = cl.formattedCoordinates
                 }
             } else {
-                self.locationPickerView.chosenLocationLabel.text = cl.formattedCoordinates
+                self.locationPickerView.chosenLocationName = cl.formattedCoordinates
                 self.location = MZLocation(coordinate: coordinates)
-            }
-            
-            // Show info about chosen location
-            self.locationPickerView.showChosenLocationConstraint.isActive = true
-            UIView.animate(withDuration: 0.15) {
-                self.locationPickerView.layoutIfNeeded()
             }
         }
     }
@@ -179,5 +178,21 @@ extension MZLocationPickerController: MKMapViewDelegate {
         if mapView.userTrackingMode == .follow || mapView.userTrackingMode == .followWithHeading {
             selectOnCoordinates(mapView.userLocation.coordinate)
         }
+    }
+    
+    public func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        hideKeyboard()
+    }
+}
+
+extension MZLocationPickerController: UISearchBarDelegate {
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        locationPickerView.isShowingSearch = true
+    }
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        locationPickerView.isShowingSearch = false
+    }
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // TODO: search
     }
 }

@@ -21,7 +21,7 @@
                 <outlet property="searchBar" destination="V36-IJ-aDZ" id="pGf-XE-MaP"/>
                 <outlet property="searchView" destination="1uO-j2-2bh" id="Yrt-bu-VXB"/>
                 <outlet property="showChosenLocationConstraint" destination="5Rh-Lo-lNm" id="FRW-65-jgY"/>
-                <outlet property="showSearchConstraint" destination="AVN-pB-ee6" id="vX1-RV-5NO"/>
+                <outlet property="showSearchConstraint" destination="3GS-An-FR3" id="A3f-ar-xel"/>
                 <outlet property="useButton" destination="Ams-qe-OaL" id="QCK-Lb-qNy"/>
             </connections>
         </placeholder>
@@ -45,13 +45,13 @@
                     </items>
                 </navigationBar>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5hn-pz-NNJ">
-                    <rect key="frame" x="0.0" y="336" width="375" height="272"/>
+                    <rect key="frame" x="0.0" y="367" width="375" height="241"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="C7D-Si-bLh"/>
                     </constraints>
                 </mapView>
                 <view contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="1uO-j2-2bh">
-                    <rect key="frame" x="0.0" y="64" width="375" height="272"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="303"/>
                     <subviews>
                         <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="V36-IJ-aDZ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -98,9 +98,9 @@ line 2</string>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="1uO-j2-2bh" secondAttribute="bottom" constant="300" id="3GS-An-FR3"/>
                 <constraint firstAttribute="trailing" secondItem="uTd-LZ-DSz" secondAttribute="trailing" id="3bO-dp-p51"/>
                 <constraint firstAttribute="bottom" secondItem="l5R-r0-y9t" secondAttribute="bottom" id="5Rh-Lo-lNm"/>
-                <constraint firstItem="1uO-j2-2bh" firstAttribute="height" secondItem="5hn-pz-NNJ" secondAttribute="height" id="AVN-pB-ee6"/>
                 <constraint firstAttribute="bottom" secondItem="5hn-pz-NNJ" secondAttribute="bottom" priority="900" id="BDs-yV-LzX"/>
                 <constraint firstAttribute="trailing" secondItem="l5R-r0-y9t" secondAttribute="trailing" id="CTM-pt-8nm"/>
                 <constraint firstItem="G8j-kz-29N" firstAttribute="leading" secondItem="tOq-Da-9nf" secondAttribute="leading" id="CiL-bk-beO"/>
