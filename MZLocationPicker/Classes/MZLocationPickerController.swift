@@ -35,6 +35,13 @@ public class MZLocationPickerController: UIViewController {
             return .standard
         }
     }
+    public var tintColor: UIColor? {
+        didSet {
+            if let lpw = locationPickerView {
+                lpw.tintColor = tintColor
+            }
+        }
+    }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +50,7 @@ public class MZLocationPickerController: UIViewController {
         locationPickerView = contentView
         view.addSubview(locationPickerView)
 
+        locationPickerView.tintColor = tintColor ?? locationPickerView.tintColor
         locationPickerView.isShowingLocateMe = (CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
         locationPickerView.cancelButton.target = self
         locationPickerView.cancelButton.action = #selector(cancelPicking(_:))
@@ -200,6 +208,13 @@ extension MZLocationPickerController: MKMapViewDelegate {
     
     public func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         hideKeyboard()
+    }
+    
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // TODO: Provide own annotation view
+        let pinAnnotation = MKPinAnnotationView()
+        pinAnnotation.tintColor = tintColor
+        return pinAnnotation
     }
 }
 
