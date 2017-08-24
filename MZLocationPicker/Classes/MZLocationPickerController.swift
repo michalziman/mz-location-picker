@@ -91,7 +91,25 @@ public class MZLocationPickerController: UIViewController {
     func tapSelectedLocation(_ gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer.state == .recognized {
             let point = gestureRecognizer.location(in: locationPickerView.mapView)
-            selectOnCoordinates(locationPickerView.mapView.convert(point, toCoordinateFrom: locationPickerView.mapView))
+            
+            var tapOnCompass = false
+            var tapOnAttribution = false
+            for subview in locationPickerView.mapView.subviews {
+                if String(describing: type(of: subview)) == "MKAttributionLabel" {
+                    tapOnAttribution = subview.frame.contains(point)
+                }
+                if String(describing: type(of: subview)) == "MKCompassView" {
+                    if #available(iOS 9.0, *) {
+                        tapOnCompass = locationPickerView.mapView.showsCompass && subview.frame.contains(point)
+                    } else {
+                        tapOnCompass = subview.frame.contains(point)
+                    }
+                }
+            }
+            
+            if !tapOnCompass && !tapOnAttribution {
+                selectOnCoordinates(locationPickerView.mapView.convert(point, toCoordinateFrom: locationPickerView.mapView))
+            }
         }
     }
     
