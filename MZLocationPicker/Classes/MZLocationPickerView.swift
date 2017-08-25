@@ -121,6 +121,14 @@ class MZLocationPickerView: UIView {
         }
     }
     
+    func setTranslations(from tranlsator:MZLocationPickerTranslator) {
+        navigationItem.title = tranlsator.locationPickerTitleText
+        cancelButton.title = tranlsator.locationPickerCancelText
+        searchBar.placeholder = tranlsator.locationPickerSearchText
+        useButton.setTitle(tranlsator.locationPickerUseText, for: .normal)
+        // TODO: set search history text
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

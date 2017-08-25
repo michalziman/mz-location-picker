@@ -40,7 +40,7 @@
                     </constraints>
                     <items>
                         <navigationItem title="Location" id="Gt2-tu-uMO">
-                            <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="0pa-Cs-4D3"/>
+                            <barButtonItem key="rightBarButtonItem" title="Cancel" id="0pa-Cs-4D3"/>
                         </navigationItem>
                     </items>
                 </navigationBar>

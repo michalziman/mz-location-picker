@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         } else {
             picker.mapType = .satellite
         }
+        picker.translator = self
         present(picker, animated: true, completion: nil)
     }
     
@@ -72,5 +73,33 @@ extension ViewController: MZLocationPickerDelegate {
         }
         let coordinates = "(\(location.coordinate.latitude) \(location.coordinate.longitude))"
         chosenLocationLabel.text = "Chosen location:\n" + name + address + coordinates
+    }
+}
+
+extension ViewController: MZLocationPickerTranslator {
+    var locationPickerUseText: String {
+        get {
+            return "Použiť"
+        }
+    }
+    var locationPickerCancelText: String {
+        get {
+            return "Zrušiť"
+        }
+    }
+    var locationPickerTitleText: String {
+        get {
+            return "Pozícia"
+        }
+    }
+    var locationPickerSearchText: String {
+        get {
+            return "Hľadať"
+        }
+    }
+    var locationPickerSearchHistoryText: String {
+        get {
+            return "História hľadania"
+        }
     }
 }

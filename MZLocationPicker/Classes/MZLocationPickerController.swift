@@ -15,6 +15,14 @@ public protocol MZLocationPickerDelegate: class {
     func locationPicker(_ locationPicker: MZLocationPickerController, didPickLocation location: MZLocation)
 }
 
+public protocol MZLocationPickerTranslator: class {
+    var locationPickerTitleText: String { get }
+    var locationPickerCancelText: String { get }
+    var locationPickerSearchText: String { get }
+    var locationPickerUseText: String { get }
+    var locationPickerSearchHistoryText: String { get }
+}
+
 public class MZLocationPickerController: UIViewController {
     fileprivate let annotationIdentifier = "MZLocationPickerCOntrollerAnnotationIdentifier"
     weak var locationPickerView: MZLocationPickerView!
@@ -27,8 +35,6 @@ public class MZLocationPickerController: UIViewController {
         public var centerOffset: CGPoint? = nil
     }
     public var annotation: AnnotationImage = AnnotationImage()
-    
-    public weak var delegate: MZLocationPickerDelegate?
     public var mapType: MKMapType = .standard {
         didSet {
             if let lpv = locationPickerView {
@@ -43,6 +49,15 @@ public class MZLocationPickerController: UIViewController {
             }
         }
     }
+    
+    public weak var delegate: MZLocationPickerDelegate?
+    public weak var translator: MZLocationPickerTranslator? {
+        didSet {
+            if let t = translator, let lpw = locationPickerView {
+                lpw.setTranslations(from: t)
+            }
+        }
+    }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +68,10 @@ public class MZLocationPickerController: UIViewController {
 
         locationPickerView.tintColor = tintColor ?? locationPickerView.tintColor
         locationPickerView.mapView.mapType = mapType
+        if let t = translator {
+            locationPickerView.setTranslations(from: t)
+        }
+        
         locationPickerView.isShowingLocateMe = (CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
         locationPickerView.cancelButton.target = self
         locationPickerView.cancelButton.action = #selector(cancelPicking(_:))
