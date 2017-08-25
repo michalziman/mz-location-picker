@@ -20,7 +20,7 @@ public protocol MZLocationPickerTranslator: class {
     var locationPickerCancelText: String { get }
     var locationPickerSearchText: String { get }
     var locationPickerUseText: String { get }
-    var locationPickerSearchHistoryText: String { get }
+    var locationPickerHistoryText: String { get }
 }
 
 public class MZLocationPickerController: UIViewController {

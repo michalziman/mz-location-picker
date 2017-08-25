@@ -97,9 +97,9 @@ extension ViewController: MZLocationPickerTranslator {
             return "Hľadať"
         }
     }
-    var locationPickerSearchHistoryText: String {
+    var locationPickerHistoryText: String {
         get {
-            return "História hľadania"
+            return "História"
         }
     }
 }
