@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6L-Wu-j3W">
-                                <rect key="frame" x="99" y="275" width="176" height="33"/>
+                                <rect key="frame" x="99" y="52" width="176" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Custom location picker">
                                     <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afH-Xy-UnU">
-                                <rect key="frame" x="101.5" y="316.5" width="171" height="33"/>
+                                <rect key="frame" x="101.5" y="93.5" width="171" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Default location picker"/>
                                 <connections>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chosen location: none" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VN-xI-jGL">
-                                <rect key="frame" x="102" y="357.5" width="170.5" height="21"/>
+                                <rect key="frame" x="102" y="158.5" width="170.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,12 +48,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8VN-xI-jGL" firstAttribute="top" secondItem="afH-Xy-UnU" secondAttribute="bottom" constant="8" id="2sT-wq-itE"/>
+                            <constraint firstItem="8VN-xI-jGL" firstAttribute="top" secondItem="afH-Xy-UnU" secondAttribute="bottom" constant="32" id="2sT-wq-itE"/>
                             <constraint firstItem="o6L-Wu-j3W" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Blj-HS-Mhh"/>
-                            <constraint firstItem="afH-Xy-UnU" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="dQG-Wg-T1u"/>
                             <constraint firstItem="8VN-xI-jGL" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="i5M-Ft-sHx"/>
                             <constraint firstItem="afH-Xy-UnU" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="pvP-vE-Whz"/>
                             <constraint firstItem="afH-Xy-UnU" firstAttribute="top" secondItem="o6L-Wu-j3W" secondAttribute="bottom" constant="8" id="tV1-Ft-p1Y"/>
+                            <constraint firstItem="o6L-Wu-j3W" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="vJ8-kI-xC6"/>
                         </constraints>
                     </view>
                     <connections>
