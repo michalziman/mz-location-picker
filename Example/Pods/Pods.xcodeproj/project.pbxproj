@@ -16,6 +16,8 @@
 		AE4D8BFD1F29C45F005545FA /* MZLocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D8BFC1F29C45F005545FA /* MZLocationPickerView.swift */; };
 		AE4D8C011F29D747005545FA /* LocationPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4D8BFB1F29C443005545FA /* LocationPickerView.xib */; };
 		AEEE1C331F4C47E20004E1AB /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE1C321F4C47E20004E1AB /* CLLocationExtension.swift */; };
+		AEEE1C391F4F07A20004E1AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEEE1C381F4F07A20004E1AB /* Images.xcassets */; };
+		AEEE1C3E1F5058BF0004E1AB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE1C3D1F5058BF0004E1AB /* UIImageExtension.swift */; };
 		B9A950BD70D8977E9F97DDBD77260E00 /* Pods-MZLocationPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A14A078B586150CD5D0B584A2970E7 /* Pods-MZLocationPicker_Tests-dummy.m */; };
 		C6802C46C43A806D8C70992F67538B8D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		C775B2311A153A208E67B0E10BC2BBEC /* Pods-MZLocationPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8213DFBE370BEB4EDF730801029EEF39 /* Pods-MZLocationPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,6 +65,8 @@
 		AE4D8BFB1F29C443005545FA /* LocationPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPickerView.xib; sourceTree = "<group>"; };
 		AE4D8BFC1F29C45F005545FA /* MZLocationPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocationPickerView.swift; sourceTree = "<group>"; };
 		AEEE1C321F4C47E20004E1AB /* CLLocationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationExtension.swift; sourceTree = "<group>"; };
+		AEEE1C381F4F07A20004E1AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AEEE1C3D1F5058BF0004E1AB /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		AF6804EE45415C4433D7670F310C2A24 /* MZLocationPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MZLocationPicker-prefix.pch"; sourceTree = "<group>"; };
 		B0EFF71B2CBAB07714C38FD7C3B0D84D /* Pods_MZLocationPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZLocationPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2520DB6D0F542F9FD60C41EF193C52 /* Pods-MZLocationPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MZLocationPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				AEEE1C311F4C47B00004E1AB /* Extensions */,
 				1DFE5520BA60E59052E29841F4C4A702 /* Classes */,
 				AE4D8BFB1F29C443005545FA /* LocationPickerView.xib */,
+				AEEE1C381F4F07A20004E1AB /* Images.xcassets */,
 			);
 			path = MZLocationPicker;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				AEEE1C321F4C47E20004E1AB /* CLLocationExtension.swift */,
+				AEEE1C3D1F5058BF0004E1AB /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEE1C391F4F07A20004E1AB /* Images.xcassets in Resources */,
 				AE4D8C011F29D747005545FA /* LocationPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +385,7 @@
 				AE4D8BD31F28E64D005545FA /* MZLocationPickerController.swift in Sources */,
 				AE4D8BFD1F29C45F005545FA /* MZLocationPickerView.swift in Sources */,
 				AE4D8BD51F28EF86005545FA /* MZLocation.swift in Sources */,
+				AEEE1C3E1F5058BF0004E1AB /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

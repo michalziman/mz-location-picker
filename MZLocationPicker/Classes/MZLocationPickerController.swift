@@ -16,23 +16,24 @@ public protocol MZLocationPickerDelegate: class {
 }
 
 public class MZLocationPickerController: UIViewController {
+    fileprivate let annotationIdentifier = "MZLocationPickerCOntrollerAnnotationIdentifier"
     weak var locationPickerView: MZLocationPickerView!
     
     let geocoder = CLGeocoder()
     var location: MZLocation? = nil
     
+    public struct AnnotationImage {
+        public var image: UIImage? = nil
+        public var centerOffset: CGPoint? = nil
+    }
+    public var annotation: AnnotationImage = AnnotationImage()
+    
     public weak var delegate: MZLocationPickerDelegate?
-    public var mapType: MKMapType {
-        set {
+    public var mapType: MKMapType = .standard {
+        didSet {
             if let lpv = locationPickerView {
-                lpv.mapView.mapType = newValue
+                lpv.mapView.mapType = mapType
             }
-        }
-        get {
-            if let lpv = locationPickerView {
-                return lpv.mapView.mapType
-            }
-            return .standard
         }
     }
     public var tintColor: UIColor? {
@@ -51,6 +52,7 @@ public class MZLocationPickerController: UIViewController {
         view.addSubview(locationPickerView)
 
         locationPickerView.tintColor = tintColor ?? locationPickerView.tintColor
+        locationPickerView.mapView.mapType = mapType
         locationPickerView.isShowingLocateMe = (CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
         locationPickerView.cancelButton.target = self
         locationPickerView.cancelButton.action = #selector(cancelPicking(_:))
@@ -211,10 +213,32 @@ extension MZLocationPickerController: MKMapViewDelegate {
     }
     
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // TODO: Provide own annotation view
-        let pinAnnotation = MKPinAnnotationView()
-        pinAnnotation.tintColor = tintColor
-        return pinAnnotation
+        guard !(annotation is MKUserLocation) else {
+            return nil
+        }
+        
+        var annotationView: MKAnnotationView
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView.annotation = annotation
+        }
+        else {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            if let image = self.annotation.image {
+                annotationView.image = image
+            } else {
+                let tc = tintColor ?? locationPickerView.tintColor ?? annotationView.tintColor ?? .blue
+                annotationView.image = UIImage(named: "pin_filled", in: Bundle(for: type(of:self)), compatibleWith: nil)?.tint(with: tc)
+            }
+            
+            if let annotationImageOffset = self.annotation.centerOffset {
+                annotationView.centerOffset = annotationImageOffset
+            } else if let imageSize = annotationView.image?.size {
+                annotationView.centerOffset = CGPoint(x: 0, y: -imageSize.height/2)
+            }
+        }
+        
+        return annotationView
     }
 }
 

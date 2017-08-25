@@ -32,6 +32,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func chooseLocationCustom(_ sender: Any) {
+        let picker = MZLocationPickerController()
+        picker.delegate = self
+        picker.tintColor = .purple
+        picker.annotation.image = #imageLiteral(resourceName: "custom_pin")
+        picker.annotation.centerOffset = CGPoint(x: 0, y: 24)
+        if #available(iOS 9.0, *) {
+            picker.mapType = .satelliteFlyover
+        } else {
+            picker.mapType = .satellite
+        }
+        present(picker, animated: true, completion: nil)
+    }
     
     @IBAction func chooseLocation(_ sender: Any) {
         let picker = MZLocationPickerController()

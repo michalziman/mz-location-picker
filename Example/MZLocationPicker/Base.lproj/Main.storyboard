@@ -21,10 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afH-Xy-UnU">
-                                <rect key="frame" x="125" y="316.5" width="124" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6L-Wu-j3W">
+                                <rect key="frame" x="99" y="275" width="176" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Choose location"/>
+                                <state key="normal" title="Custom location picker">
+                                    <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseLocationCustom:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="i2L-hE-Zzt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afH-Xy-UnU">
+                                <rect key="frame" x="101.5" y="316.5" width="171" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Default location picker"/>
                                 <connections>
                                     <action selector="chooseLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="S7A-wH-m5N"/>
                                 </connections>
@@ -39,9 +49,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8VN-xI-jGL" firstAttribute="top" secondItem="afH-Xy-UnU" secondAttribute="bottom" constant="8" id="2sT-wq-itE"/>
+                            <constraint firstItem="o6L-Wu-j3W" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Blj-HS-Mhh"/>
                             <constraint firstItem="afH-Xy-UnU" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="dQG-Wg-T1u"/>
                             <constraint firstItem="8VN-xI-jGL" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="i5M-Ft-sHx"/>
                             <constraint firstItem="afH-Xy-UnU" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="pvP-vE-Whz"/>
+                            <constraint firstItem="afH-Xy-UnU" firstAttribute="top" secondItem="o6L-Wu-j3W" secondAttribute="bottom" constant="8" id="tV1-Ft-p1Y"/>
                         </constraints>
                     </view>
                     <connections>
