@@ -142,9 +142,3 @@ class MZLocationPickerView: UIView {
         NotificationCenter.default.removeObserver(self)
     }
 }
-
-extension MZLocationPickerView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        endEditing(true)
-    }
-}

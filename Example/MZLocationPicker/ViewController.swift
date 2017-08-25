@@ -38,11 +38,7 @@ class ViewController: UIViewController {
         picker.tintColor = .purple
         picker.annotation.image = #imageLiteral(resourceName: "custom_pin")
         picker.annotation.centerOffset = CGPoint(x: 0, y: 24)
-        if #available(iOS 9.0, *) {
-            picker.mapType = .satelliteFlyover
-        } else {
-            picker.mapType = .satellite
-        }
+        picker.mapType = .satellite
         picker.translator = self
         present(picker, animated: true, completion: nil)
     }
