@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MZLocationPickerView" customModule="MZLocationPicker" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="0pa-Cs-4D3" id="8la-S7-H4J"/>
+                <outlet property="cancelCrossButton" destination="gbe-Hh-u8p" id="M43-bL-jMP"/>
                 <outlet property="chosenLocationLabel" destination="d1n-4S-6PF" id="XPf-H3-8Rp"/>
                 <outlet property="chosenLocationView" destination="l5R-r0-y9t" id="cAo-VO-PsW"/>
                 <outlet property="contentView" destination="tOq-Da-9nf" id="jgj-Oh-bDm"/>
@@ -20,6 +21,7 @@
                 <outlet property="navigationItem" destination="Gt2-tu-uMO" id="cjQ-XF-LBb"/>
                 <outlet property="searchBar" destination="V36-IJ-aDZ" id="pGf-XE-MaP"/>
                 <outlet property="searchView" destination="1uO-j2-2bh" id="Yrt-bu-VXB"/>
+                <outlet property="showCancelSearchConstraint" destination="LUy-GZ-Cki" id="5if-9g-6K3"/>
                 <outlet property="showChosenLocationConstraint" destination="5Rh-Lo-lNm" id="FRW-65-jgY"/>
                 <outlet property="showSearchConstraint" destination="3GS-An-FR3" id="A3f-ar-xel"/>
                 <outlet property="useButton" destination="Ams-qe-OaL" id="QCK-Lb-qNy"/>
@@ -54,19 +56,33 @@
                     <rect key="frame" x="0.0" y="64" width="375" height="303"/>
                     <subviews>
                         <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="V36-IJ-aDZ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Z2X-wh-ccP"/>
                             </constraints>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbe-Hh-u8p" userLabel="Cancel cross">
+                            <rect key="frame" x="341" y="10" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="jEw-i8-ePL"/>
+                                <constraint firstAttribute="width" constant="30" id="sNP-IJ-Dux"/>
+                            </constraints>
+                            <state key="normal" image="cancel_cross"/>
+                            <connections>
+                                <action selector="hideSearch:" destination="-1" eventType="touchUpInside" id="rgH-tg-CAj"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="V36-IJ-aDZ" firstAttribute="top" secondItem="1uO-j2-2bh" secondAttribute="top" id="3Vt-65-uQu"/>
                         <constraint firstAttribute="bottom" secondItem="V36-IJ-aDZ" secondAttribute="bottom" priority="900" id="8l1-YR-lou"/>
-                        <constraint firstAttribute="trailing" secondItem="V36-IJ-aDZ" secondAttribute="trailing" id="Iwc-SA-0uN"/>
+                        <constraint firstAttribute="trailing" secondItem="V36-IJ-aDZ" secondAttribute="trailing" priority="900" id="Iwc-SA-0uN"/>
+                        <constraint firstItem="gbe-Hh-u8p" firstAttribute="leading" secondItem="V36-IJ-aDZ" secondAttribute="trailing" constant="-4" id="Iyj-o6-Wbi"/>
+                        <constraint firstAttribute="trailing" secondItem="gbe-Hh-u8p" secondAttribute="trailing" constant="4" id="LUy-GZ-Cki"/>
                         <constraint firstItem="V36-IJ-aDZ" firstAttribute="leading" secondItem="1uO-j2-2bh" secondAttribute="leading" id="O84-zn-Ui0"/>
+                        <constraint firstItem="gbe-Hh-u8p" firstAttribute="centerY" secondItem="V36-IJ-aDZ" secondAttribute="centerY" id="uGf-n6-8cL"/>
                     </constraints>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5R-r0-y9t">
@@ -120,4 +136,7 @@ line 2</string>
             <point key="canvasLocation" x="33.5" y="69.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cancel_cross" width="14" height="14"/>
+    </resources>
 </document>

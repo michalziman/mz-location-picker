@@ -22,6 +22,7 @@ class MZLocationPickerView: UIView {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var navigationItem: UINavigationItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var cancelCrossButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var mapView: MKMapView!
@@ -30,6 +31,7 @@ class MZLocationPickerView: UIView {
     @IBOutlet weak var useButton: UIButton!
     
     
+    @IBOutlet var showCancelSearchConstraint: NSLayoutConstraint!
     @IBOutlet var showSearchConstraint: NSLayoutConstraint!
     @IBOutlet var showChosenLocationConstraint: NSLayoutConstraint!
     
@@ -66,6 +68,7 @@ class MZLocationPickerView: UIView {
     var isShowingSearch: Bool {
         set {
             showSearchConstraint.isActive = newValue
+            showCancelSearchConstraint.isActive = newValue
             UIView.animate(withDuration: Constants.animationDuration) {
                 self.layoutIfNeeded()
             }
@@ -108,6 +111,7 @@ class MZLocationPickerView: UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
+        showCancelSearchConstraint.isActive = false
         showSearchConstraint.isActive = false
         showChosenLocationConstraint.isActive = false
         
@@ -127,6 +131,12 @@ class MZLocationPickerView: UIView {
         searchBar.placeholder = tranlsator.locationPickerSearchText
         useButton.setTitle(tranlsator.locationPickerUseText, for: .normal)
         // TODO: set search history text
+    }
+    
+    @IBAction func hideSearch(_ sender: Any) {
+        endEditing(true)
+        searchBar.text = ""
+        isShowingSearch = false
     }
     
     deinit {
