@@ -92,6 +92,14 @@ public class MZLocationPickerController: UIViewController {
         
         locationPickerView.navigationBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         locationPickerView.searchBar.delegate = self
+        
+        let greenSearch = UIView()
+        greenSearch.backgroundColor = .green
+        locationPickerView.searchResultsView = greenSearch
+        
+        let blueHistory = UIView()
+        blueHistory.backgroundColor = .blue
+        locationPickerView.recentLocationsView = blueHistory
     }
     
     override public func didReceiveMemoryWarning() {
@@ -269,6 +277,6 @@ extension MZLocationPickerController: UISearchBarDelegate {
         locationPickerView.isShowingSearch = false
     }
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // TODO: search
+        locationPickerView.isShowingSearchResults = !searchText.isEmpty
     }
 }

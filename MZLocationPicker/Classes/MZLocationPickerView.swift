@@ -30,10 +30,52 @@ class MZLocationPickerView: UIView {
     @IBOutlet weak var chosenLocationLabel: UILabel!
     @IBOutlet weak var useButton: UIButton!
     
-    
     @IBOutlet var showCancelSearchConstraint: NSLayoutConstraint!
     @IBOutlet var showSearchConstraint: NSLayoutConstraint!
     @IBOutlet var showChosenLocationConstraint: NSLayoutConstraint!
+    
+    weak var searchResultsView: UIView? = nil {
+        willSet {
+            if let oldSrv = searchResultsView {
+                oldSrv.removeFromSuperview()
+            }
+        }
+        didSet {
+            if let newSrv = searchResultsView {
+                addToSearchView(view: newSrv)
+                newSrv.isHidden = !isShowingSearchResults
+            }
+        }
+    }
+    weak var recentLocationsView: UIView? = nil {
+        willSet {
+            if let oldRlv = recentLocationsView {
+                oldRlv.removeFromSuperview()
+            }
+        }
+        didSet {
+            if let newRlv = recentLocationsView {
+                addToSearchView(view: newRlv)
+                newRlv.isHidden = isShowingSearchResults
+            }
+        }
+    }
+    func addToSearchView(view:UIView) {
+        var newFrame = searchView.frame
+        newFrame.origin.y = searchBar.frame.height
+        newFrame.size.height = searchView.frame.height - searchBar.frame.height
+        view.frame = newFrame
+
+        view.translatesAutoresizingMaskIntoConstraints = false
+        searchView.addSubview(view)
+        searchView.addConstraints([
+            NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: searchBar, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: searchView, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: searchView, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: searchView, attribute: .trailing, multiplier: 1, constant: 0)
+            ])
+    }
+    
     
     var chosenLocation: CLLocation? = nil {
         didSet {
@@ -75,6 +117,25 @@ class MZLocationPickerView: UIView {
         }
         get {
             return showSearchConstraint.isActive
+        }
+    }
+    var isShowingSearchResults: Bool = false {
+        didSet {
+            if isShowingSearchResults {
+                if let srv = searchResultsView {
+                    srv.isHidden = false
+                }
+                if let rlv = recentLocationsView {
+                    rlv.isHidden = true
+                }
+            } else {
+                if let srv = searchResultsView {
+                    srv.isHidden = true
+                }
+                if let rlv = recentLocationsView {
+                    rlv.isHidden = false
+                }
+            }
         }
     }
     
