@@ -16,13 +16,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 MZLocationPicker is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-## Known issues
-
-- When map type is flyover, search is not displayed correctly. For best functionality, avoid using flyover map types.
-
 ```ruby
 pod "MZLocationPicker"
 ```
+
+## Known issues
+
+- When map type is flyover, search is not displayed correctly. For best functionality, avoid using flyover map types.
 
 ## Author
 
