@@ -26,6 +26,7 @@ public protocol MZLocationPickerTranslator: class {
 public class MZLocationPickerController: UIViewController {
     fileprivate let annotationIdentifier = "MZLocationPickerCOntrollerAnnotationIdentifier"
     weak var locationPickerView: MZLocationPickerView!
+    let searchTableController = MZSearchTableController(style: .plain)
     
     let geocoder = CLGeocoder()
     var location: MZLocation? = nil
@@ -93,9 +94,8 @@ public class MZLocationPickerController: UIViewController {
         locationPickerView.navigationBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         locationPickerView.searchBar.delegate = self
         
-        let greenSearch = UIView()
-        greenSearch.backgroundColor = .green
-        locationPickerView.searchResultsView = greenSearch
+        locationPickerView.searchResultsView = searchTableController.tableView
+        searchTableController.delegate = self
         
         let blueHistory = UIView()
         blueHistory.backgroundColor = .blue
@@ -161,60 +161,22 @@ public class MZLocationPickerController: UIViewController {
         geocoder.reverseGeocodeLocation(cl) { response, error in
             if let e = error as? CLError, e.code != .geocodeCanceled {
                 print("MZLocationPicker:\(#function): \(e)")
-                self.locationPickerView.chosenLocationName = cl.formattedCoordinates
+                self.locationPickerView.chosenLocationName = coordinates.formattedCoordinates
                 self.location = MZLocation(coordinate: coordinates)
             } else if let placemark = response?.first {
                 let name = placemark.areasOfInterest?.first
-                let address = self.getAddress(placemark: placemark)
+                let address = placemark.address
                 self.location = MZLocation(coordinate: coordinates, name: name, address: address)
                 if let a = address, !a.isEmpty {
                     self.locationPickerView.chosenLocationName = a
                 } else {
-                    self.locationPickerView.chosenLocationName = cl.formattedCoordinates
+                    self.locationPickerView.chosenLocationName = coordinates.formattedCoordinates
                 }
             } else {
-                self.locationPickerView.chosenLocationName = cl.formattedCoordinates
+                self.locationPickerView.chosenLocationName = coordinates.formattedCoordinates
                 self.location = MZLocation(coordinate: coordinates)
             }
         }
-    }
-    
-    func getAddress(placemark: CLPlacemark) -> String? {
-        if let addressDict = placemark.addressDictionary {
-            let lines: [String]
-            if let linesFromAddressDict = addressDict["FormattedAddressLines"] as? [String] {
-                lines = linesFromAddressDict
-            } else {
-                var street: String? = nil
-                if let stf = placemark.subThoroughfare, let tf = placemark.thoroughfare {
-                    street = "\(stf) \(tf)"
-                } else if let stf = placemark.subThoroughfare {
-                    street = stf
-                } else if let tf = placemark.thoroughfare {
-                    street = tf
-                }
-                var country: String? = nil
-                if let c = placemark.country, let icc = placemark.isoCountryCode {
-                    country = "\(c) \(icc)"
-                } else if let c = placemark.country {
-                    country = c
-                } else if let icc = placemark.isoCountryCode {
-                    country = icc
-                }
-                let linesFromPlacemark: [String?] = [street, placemark.locality, placemark.administrativeArea, placemark.postalCode, country]
-                
-                let disponibleLines = linesFromPlacemark.filter { line -> Bool in
-                    return line != nil
-                }
-                lines = disponibleLines.map { line -> String in
-                    return line ?? ""
-                }
-            }
-            if lines.count > 0 {
-                return lines.joined(separator: "\n")
-            }
-        }
-        return nil
     }
     
     deinit {
@@ -278,5 +240,21 @@ extension MZLocationPickerController: UISearchBarDelegate {
     }
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         locationPickerView.isShowingSearchResults = !searchText.isEmpty
+        searchTableController.searchQuery = searchText
+    }
+}
+
+extension MZLocationPickerController: MZSearchTableDelegate {
+    func searchTableController(_ searchTableController: MZSearchTableController, didPickLocation location: MZLocation) {
+        self.location = location
+        let cl = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        locationPickerView.chosenLocation = cl
+        if let a = location.address, !a.isEmpty {
+            locationPickerView.chosenLocationName = a
+        } else {
+            locationPickerView.chosenLocationName = location.coordinate.formattedCoordinates
+        }
+        locationPickerView.mapView.setCenter(location.coordinate, animated: true)
+        hideKeyboard()
     }
 }

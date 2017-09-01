@@ -1,5 +1,5 @@
 //
-//  CLLocationExtension.swift
+//  CLLocationCoordinate2DExtension.swift
 //  Pods
 //
 //  Created by Michal Ziman on 22/08/2017.
@@ -8,15 +8,15 @@
 
 import CoreLocation
 
-extension CLLocation {
+extension CLLocationCoordinate2D {
     var formattedCoordinates: String {
         return latitudeDegreeDescription + ", " + longitudeDegreeDescription
     }
     var latitudeDegreeDescription: String {
-        return fromDecToDeg(input: self.coordinate.latitude) + " \(self.coordinate.latitude >= 0 ? "N" : "S")"
+        return fromDecToDeg(input: self.latitude) + " \(self.latitude >= 0 ? "N" : "S")"
     }
     var longitudeDegreeDescription: String {
-        return fromDecToDeg(input: self.coordinate.longitude) + " \(self.coordinate.longitude >= 0 ? "E" : "W")"
+        return fromDecToDeg(input: self.longitude) + " \(self.longitude >= 0 ? "E" : "W")"
     }
     private func fromDecToDeg(input: Double) -> String {
         var inputSeconds = Int(input * 3600)
