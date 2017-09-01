@@ -41,6 +41,6 @@ It is intended to be presented modally, though it is not necessary.
 # 'MZLocationPicker/Assets/*.png', 
 
     # s.public_header_files = 'Pod/Classes/**/*.h'
-    # s.frameworks = 'UIKit', 'MapKit'
+    # s.frameworks = 'UIKit', 'MapKit', 'CoreData'
     # s.dependency 'AFNetworking', '~> 2.3'
 end

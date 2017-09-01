@@ -12,6 +12,8 @@
 		77A1A11DCE1772F9E2C891E0F9865DA1 /* Pods-MZLocationPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A123F748935C763158CADEA24B268 /* Pods-MZLocationPicker_Example-dummy.m */; };
 		AE490D841F59358400A43480 /* MZSearchTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE490D831F59358400A43480 /* MZSearchTableController.swift */; };
 		AE490D881F59404E00A43480 /* CLPlacemarkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE490D871F59404E00A43480 /* CLPlacemarkExtension.swift */; };
+		AE490D8E1F5985EE00A43480 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE490D8D1F5985EE00A43480 /* CoreData.framework */; };
+		AE490D941F59874F00A43480 /* MZLocationPickerHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE490D921F59874F00A43480 /* MZLocationPickerHistory.xcdatamodeld */; };
 		AE4D8BD31F28E64D005545FA /* MZLocationPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D8BD21F28E64D005545FA /* MZLocationPickerController.swift */; };
 		AE4D8BD51F28EF86005545FA /* MZLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D8BD41F28EF86005545FA /* MZLocation.swift */; };
 		AE4D8BD71F28EFB0005545FA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4D8BD61F28EFB0005545FA /* MapKit.framework */; };
@@ -63,6 +65,8 @@
 		A30D0A59440A83C4282B736F3EF78794 /* MZLocationPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MZLocationPicker-dummy.m"; sourceTree = "<group>"; };
 		AE490D831F59358400A43480 /* MZSearchTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZSearchTableController.swift; sourceTree = "<group>"; };
 		AE490D871F59404E00A43480 /* CLPlacemarkExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLPlacemarkExtension.swift; sourceTree = "<group>"; };
+		AE490D8D1F5985EE00A43480 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		AE490D931F59874F00A43480 /* MZLocationPickerHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MZLocationPickerHistory.xcdatamodel; sourceTree = "<group>"; };
 		AE4D8BD21F28E64D005545FA /* MZLocationPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocationPickerController.swift; sourceTree = "<group>"; };
 		AE4D8BD41F28EF86005545FA /* MZLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocation.swift; sourceTree = "<group>"; };
 		AE4D8BD61F28EFB0005545FA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -87,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE490D8E1F5985EE00A43480 /* CoreData.framework in Frameworks */,
 				AE4D8BD71F28EFB0005545FA /* MapKit.framework in Frameworks */,
 				C6802C46C43A806D8C70992F67538B8D /* Foundation.framework in Frameworks */,
 			);
@@ -118,6 +123,7 @@
 				1DFE5520BA60E59052E29841F4C4A702 /* Classes */,
 				AE4D8BFB1F29C443005545FA /* LocationPickerView.xib */,
 				AEEE1C381F4F07A20004E1AB /* Images.xcassets */,
+				AE490D921F59874F00A43480 /* MZLocationPickerHistory.xcdatamodeld */,
 			);
 			path = MZLocationPicker;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE490D8D1F5985EE00A43480 /* CoreData.framework */,
 				AE4D8BD61F28EFB0005545FA /* MapKit.framework */,
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
@@ -391,6 +398,7 @@
 				AE490D841F59358400A43480 /* MZSearchTableController.swift in Sources */,
 				4E43D19C58468A138AD980543687A7E9 /* MZLocationPicker-dummy.m in Sources */,
 				AE4D8BD31F28E64D005545FA /* MZLocationPickerController.swift in Sources */,
+				AE490D941F59874F00A43480 /* MZLocationPickerHistory.xcdatamodeld in Sources */,
 				AE4D8BFD1F29C45F005545FA /* MZLocationPickerView.swift in Sources */,
 				AE4D8BD51F28EF86005545FA /* MZLocation.swift in Sources */,
 				AEEE1C3E1F5058BF0004E1AB /* UIImageExtension.swift in Sources */,
@@ -775,6 +783,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AE490D921F59874F00A43480 /* MZLocationPickerHistory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AE490D931F59874F00A43480 /* MZLocationPickerHistory.xcdatamodel */,
+			);
+			currentVersion = AE490D931F59874F00A43480 /* MZLocationPickerHistory.xcdatamodel */;
+			path = MZLocationPickerHistory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }
