@@ -12,6 +12,8 @@ import CoreLocation
 
 class MZHistoryTableController: MZLocationsTableController {
     var headerTitle: String = "History"
+    var deleteTitle: String = "Delete"
+    var recentLocations: [MZRecentLocation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,8 @@ class MZHistoryTableController: MZLocationsTableController {
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         do {
-            let fetched = try context.fetch(fetchRequest) as? [MZRecentLocation] ?? []
-            results = fetched.map({ recentLocation -> MZLocation in
+            recentLocations = try context.fetch(fetchRequest) as? [MZRecentLocation] ?? []
+            results = recentLocations.map({ recentLocation -> MZLocation in
                 return MZLocation(coordinate: CLLocationCoordinate2D(latitude: recentLocation.latitude,
                                                                      longitude: recentLocation.longitude),
                                   name: recentLocation.name,
@@ -42,7 +44,41 @@ class MZHistoryTableController: MZLocationsTableController {
         return headerTitle
     }
     
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return deleteTitle
+    }
     
+    func setTranslations(from translator: MZLocationPickerTranslator) {
+        headerTitle = translator.locationPickerHistoryText
+        deleteTitle = translator.locationPickerDeleteText
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let locationToDelete = recentLocations[indexPath.row]
+            recentLocations.remove(at: indexPath.row)
+            results.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+            
+            guard let context = managedObjectContext else {
+                NSLog("MZLocationPicker:MZHistoryTableController:\(#function) Could not delete location from history due to missing managed object context.")
+                return
+            }
+            context.delete(locationToDelete)
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("MZLocationPicker:MZHistoryTableController:\(#function) \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
     
     
     // MARK: - Core Data

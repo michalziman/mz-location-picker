@@ -98,4 +98,9 @@ extension ViewController: MZLocationPickerTranslator {
             return "História"
         }
     }
+    var locationPickerDeleteText: String {
+        get {
+            return "Vymazať"
+        }
+    }
 }

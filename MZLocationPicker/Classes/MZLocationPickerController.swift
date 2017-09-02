@@ -21,6 +21,7 @@ public protocol MZLocationPickerTranslator: class {
     var locationPickerSearchText: String { get }
     var locationPickerUseText: String { get }
     var locationPickerHistoryText: String { get }
+    var locationPickerDeleteText: String { get }
 }
 
 public class MZLocationPickerController: UIViewController {
@@ -57,7 +58,7 @@ public class MZLocationPickerController: UIViewController {
         didSet {
             if let t = translator, let lpw = locationPickerView {
                 lpw.setTranslations(from: t)
-                historyTableController.headerTitle = t.locationPickerHistoryText
+                historyTableController.setTranslations(from: t)
             }
         }
     }
@@ -73,7 +74,7 @@ public class MZLocationPickerController: UIViewController {
         locationPickerView.mapView.mapType = mapType
         if let t = translator {
             locationPickerView.setTranslations(from: t)
-            historyTableController.headerTitle = t.locationPickerHistoryText
+            historyTableController.setTranslations(from: t)
         }
         
         locationPickerView.isShowingLocateMe = (CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
