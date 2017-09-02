@@ -12,6 +12,8 @@
 		77A1A11DCE1772F9E2C891E0F9865DA1 /* Pods-MZLocationPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A123F748935C763158CADEA24B268 /* Pods-MZLocationPicker_Example-dummy.m */; };
 		9012DCE51F5B598A002AA645 /* MZHistoryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012DCE41F5B598A002AA645 /* MZHistoryTableController.swift */; };
 		9012DCE71F5B59EE002AA645 /* MZLocationsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012DCE61F5B59EE002AA645 /* MZLocationsTableController.swift */; };
+		9012DCEB1F5B781C002AA645 /* MZLocationPickerControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012DCEA1F5B781C002AA645 /* MZLocationPickerControllerExtensions.swift */; };
+		9012DCED1F5B78BF002AA645 /* MZLocationPickerControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012DCEC1F5B78BF002AA645 /* MZLocationPickerControllerActions.swift */; };
 		AE490D841F59358400A43480 /* MZSearchTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE490D831F59358400A43480 /* MZSearchTableController.swift */; };
 		AE490D881F59404E00A43480 /* CLPlacemarkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE490D871F59404E00A43480 /* CLPlacemarkExtension.swift */; };
 		AE490D8E1F5985EE00A43480 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE490D8D1F5985EE00A43480 /* CoreData.framework */; };
@@ -62,6 +64,8 @@
 		8BC40B482966A4C6F134E1097B8893AD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9012DCE41F5B598A002AA645 /* MZHistoryTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZHistoryTableController.swift; sourceTree = "<group>"; };
 		9012DCE61F5B59EE002AA645 /* MZLocationsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocationsTableController.swift; sourceTree = "<group>"; };
+		9012DCEA1F5B781C002AA645 /* MZLocationPickerControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocationPickerControllerExtensions.swift; sourceTree = "<group>"; };
+		9012DCEC1F5B78BF002AA645 /* MZLocationPickerControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocationPickerControllerActions.swift; sourceTree = "<group>"; };
 		90485BCB2D7555369778CAB0B8CCD26F /* MZLocationPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MZLocationPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90940560F424D031D94F6DFE8ECB499E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92275DCB5F28FE2CDF8E43BEC417A030 /* Pods-MZLocationPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MZLocationPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			children = (
 				AE4D8BD41F28EF86005545FA /* MZLocation.swift */,
 				AE4D8BD21F28E64D005545FA /* MZLocationPickerController.swift */,
+				9012DCEC1F5B78BF002AA645 /* MZLocationPickerControllerActions.swift */,
+				9012DCEA1F5B781C002AA645 /* MZLocationPickerControllerExtensions.swift */,
 				AE4D8BFC1F29C45F005545FA /* MZLocationPickerView.swift */,
 				9012DCE61F5B59EE002AA645 /* MZLocationsTableController.swift */,
 				AE490D831F59358400A43480 /* MZSearchTableController.swift */,
@@ -402,8 +408,10 @@
 				9012DCE51F5B598A002AA645 /* MZHistoryTableController.swift in Sources */,
 				AEEE1C331F4C47E20004E1AB /* CLLocationCoordinate2DExtension.swift in Sources */,
 				AE490D881F59404E00A43480 /* CLPlacemarkExtension.swift in Sources */,
+				9012DCEB1F5B781C002AA645 /* MZLocationPickerControllerExtensions.swift in Sources */,
 				AE490D841F59358400A43480 /* MZSearchTableController.swift in Sources */,
 				9012DCE71F5B59EE002AA645 /* MZLocationsTableController.swift in Sources */,
+				9012DCED1F5B78BF002AA645 /* MZLocationPickerControllerActions.swift in Sources */,
 				4E43D19C58468A138AD980543687A7E9 /* MZLocationPicker-dummy.m in Sources */,
 				AE4D8BD31F28E64D005545FA /* MZLocationPickerController.swift in Sources */,
 				AE490D941F59874F00A43480 /* MZLocationPickerHistory.xcdatamodeld in Sources */,

@@ -1,6 +1,9 @@
 # MZLocationPicker
 
-[![CI Status](http://img.shields.io/travis/Michal Ziman/MZLocationPicker.svg?style=flat)](https://travis-ci.org/Michal Ziman/MZLocationPicker)
+Simple to use location picker. As for developer, so for users, too. 
+
+Yet, it still presents: reverse geocoding for location chosen in map, location search, history of chosen locations, multiple map types, custom pins, custom tint color, support for translations using delegate, landscape as well as portrait orientation.
+
 [![Version](https://img.shields.io/cocoapods/v/MZLocationPicker.svg?style=flat)](http://cocoapods.org/pods/MZLocationPicker)
 [![License](https://img.shields.io/cocoapods/l/MZLocationPicker.svg?style=flat)](http://cocoapods.org/pods/MZLocationPicker)
 [![Platform](https://img.shields.io/cocoapods/p/MZLocationPicker.svg?style=flat)](http://cocoapods.org/pods/MZLocationPicker)
