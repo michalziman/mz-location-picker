@@ -9,11 +9,9 @@
 import UIKit
 import MapKit
 
-protocol MZSearchTableDelegate: class {
-    func searchTableController(_ searchTableController:MZSearchTableController, didPickLocation location:MZLocation)
-}
 
-class MZSearchTableController: UITableViewController {
+
+class MZSearchTableController: MZLocationsTableController {
     private var locationSearch: MKLocalSearch?
     
     var searchQuery: String = "" {
@@ -40,51 +38,11 @@ class MZSearchTableController: UITableViewController {
                             }
                             self.tableView.reloadData()
                         } else {
-                            print("MZSearchTableController:\(#function): \(String(describing: error))")
+                            NSLog("MZLocationPicker:MZSearchTableController:\(#function): \(String(describing: error))")
                         }
                     }
                 }
             }
         }
     }
-
-    private var results: [MZLocation] = []
-    
-    weak var delegate: MZSearchTableDelegate?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier")
-        let cell = dequeuedCell ?? UITableViewCell(style: .subtitle, reuseIdentifier: "reuseIdentifier")
-        cell.selectionStyle = .none
-        let location = results[indexPath.row]
-        cell.textLabel?.text = location.name
-        cell.detailTextLabel?.text = location.address?.replacingOccurrences(of: "\n", with: ", ")
-        return cell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let d = delegate {
-            d.searchTableController(self, didPickLocation: results[indexPath.row])
-        }
-    }
-
 }

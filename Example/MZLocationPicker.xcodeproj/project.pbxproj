@@ -215,12 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = F59S62N3W2;
+						DevelopmentTeam = E65CS3GP27;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = F59S62N3W2;
+						DevelopmentTeam = E65CS3GP27;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -498,7 +498,7 @@
 			baseConfigurationReference = 0EA7254F9C1547ED8FC1C15F /* Pods-MZLocationPicker_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F59S62N3W2;
+				DEVELOPMENT_TEAM = E65CS3GP27;
 				INFOPLIST_FILE = MZLocationPicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -513,7 +513,7 @@
 			baseConfigurationReference = 5D1A4A8DC11C946EBF60B6D7 /* Pods-MZLocationPicker_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F59S62N3W2;
+				DEVELOPMENT_TEAM = E65CS3GP27;
 				INFOPLIST_FILE = MZLocationPicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -527,7 +527,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20F252C5BAF25089A7D0AF9B /* Pods-MZLocationPicker_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = F59S62N3W2;
+				DEVELOPMENT_TEAM = E65CS3GP27;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -549,7 +549,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0D48C4696B16FB2FD3ECEC80 /* Pods-MZLocationPicker_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = F59S62N3W2;
+				DEVELOPMENT_TEAM = E65CS3GP27;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

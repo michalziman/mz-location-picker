@@ -27,6 +27,7 @@ public class MZLocationPickerController: UIViewController {
     fileprivate let annotationIdentifier = "MZLocationPickerCOntrollerAnnotationIdentifier"
     weak var locationPickerView: MZLocationPickerView!
     let searchTableController = MZSearchTableController(style: .plain)
+    let historyTableController = MZHistoryTableController(style: .plain)
     
     let geocoder = CLGeocoder()
     var location: MZLocation? = nil
@@ -56,6 +57,7 @@ public class MZLocationPickerController: UIViewController {
         didSet {
             if let t = translator, let lpw = locationPickerView {
                 lpw.setTranslations(from: t)
+                historyTableController.headerTitle = t.locationPickerHistoryText
             }
         }
     }
@@ -71,6 +73,7 @@ public class MZLocationPickerController: UIViewController {
         locationPickerView.mapView.mapType = mapType
         if let t = translator {
             locationPickerView.setTranslations(from: t)
+            historyTableController.headerTitle = t.locationPickerHistoryText
         }
         
         locationPickerView.isShowingLocateMe = (CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
@@ -97,9 +100,8 @@ public class MZLocationPickerController: UIViewController {
         locationPickerView.searchResultsView = searchTableController.tableView
         searchTableController.delegate = self
         
-        let blueHistory = UIView()
-        blueHistory.backgroundColor = .blue
-        locationPickerView.recentLocationsView = blueHistory
+        locationPickerView.recentLocationsView = historyTableController.tableView
+        historyTableController.delegate = self
     }
     
     override public func didReceiveMemoryWarning() {
@@ -120,6 +122,7 @@ public class MZLocationPickerController: UIViewController {
     
     func confirmPicking(_ sender: Any) {
         if let d = delegate, let loc = location {
+            historyTableController.save(location: loc)
             d.locationPicker(self, didPickLocation: loc)
         }
         dismiss(animated: true)
@@ -160,7 +163,7 @@ public class MZLocationPickerController: UIViewController {
         geocoder.cancelGeocode()
         geocoder.reverseGeocodeLocation(cl) { response, error in
             if let e = error as? CLError, e.code != .geocodeCanceled {
-                print("MZLocationPicker:\(#function): \(e)")
+                NSLog("MZLocationPicker:MZLocationPickerController:\(#function): \(e)")
                 self.locationPickerView.chosenLocationName = coordinates.formattedCoordinates
                 self.location = MZLocation(coordinate: coordinates)
             } else if let placemark = response?.first {
@@ -244,8 +247,8 @@ extension MZLocationPickerController: UISearchBarDelegate {
     }
 }
 
-extension MZLocationPickerController: MZSearchTableDelegate {
-    func searchTableController(_ searchTableController: MZSearchTableController, didPickLocation location: MZLocation) {
+extension MZLocationPickerController: MZLocationsTableDelegate {
+    func tableController(_ tableController: MZLocationsTableController, didPickLocation location: MZLocation) {
         self.location = location
         let cl = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         locationPickerView.chosenLocation = cl

@@ -191,7 +191,6 @@ class MZLocationPickerView: UIView {
         cancelButton.title = tranlsator.locationPickerCancelText
         searchBar.placeholder = tranlsator.locationPickerSearchText
         useButton.setTitle(tranlsator.locationPickerUseText, for: .normal)
-        // TODO: set history text
     }
     
     @IBAction func hideSearch(_ sender: Any) {
