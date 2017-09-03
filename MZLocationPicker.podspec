@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'MZLocationPicker'
-    s.version          = '0.1.0'
+    s.version          = '0.1.1'
     s.summary          = 'MZLocationPicker allows user to select one exact location.'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ It is intended to be presented modally, though it is not necessary.
     s.homepage         = 'https://github.com/michalziman/mz-location-picker'
     s.screenshots      = 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot1.png', 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot2.png', 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot3.png', 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot4.png'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.author           = { 'Michal Ziman' => 'michalziman@me.cz' }
+    s.author           = { 'Michal Ziman' => 'michalziman@me.com' }
     s.source           = { :git => 'https://github.com/michalziman/mz-location-picker.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = '10.0'
