@@ -1,18 +1,36 @@
 # MZLocationPicker
 
-Simple to use location picker. As for developer, so for users, too. 
+Simple to use location picker. As for users, so for developers. 
 
-Yet, it still presents: reverse geocoding for location chosen in map, location search, history of chosen locations, multiple map types, custom pins, custom tint color, support for translations using delegate, landscape as well as portrait orientation.
+Default              | History              | Search               | Customized
+---------------------|----------------------|----------------------|---------------------
+![](screenshot1.png) | ![](screenshot2.png) | ![](screenshot3.png) | ![](screenshot4.png)
 
 [![Version](https://img.shields.io/cocoapods/v/MZLocationPicker.svg?style=flat)](http://cocoapods.org/pods/MZLocationPicker)
 [![License](https://img.shields.io/cocoapods/l/MZLocationPicker.svg?style=flat)](http://cocoapods.org/pods/MZLocationPicker)
 [![Platform](https://img.shields.io/cocoapods/p/MZLocationPicker.svg?style=flat)](http://cocoapods.org/pods/MZLocationPicker)
 
+* [Features](#features)
+* [Example](#example)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Known Issues](#known-issues)
+* [Author](#author)
+* [License](#license)
+
+## Features
+* Reverse geocoding for location chosen in map
+* Location textual search
+* History of chosen locations
+* Multiple map types
+* Custom annotations/pins
+* Custom tint color
+* Support for localizations
+* Landscape as well as portrait orientation
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -46,7 +64,7 @@ picker.translator = self
 present(picker, animated: true, completion: nil)
 ```
 
-## Known issues
+## Known Issues
 
 - When map type is flyover, search is not displayed correctly. For best functionality, avoid using flyover map types.
 
