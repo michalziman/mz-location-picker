@@ -23,6 +23,29 @@ it, simply add the following line to your Podfile:
 pod "MZLocationPicker"
 ```
 
+## Usage 
+
+For simple usage just implement MZLocationPickerDelegate methods and present picker like this:
+
+```ruby
+let picker = MZLocationPickerController()
+picker.delegate = self
+present(picker, animated: true, completion: nil)
+```
+
+However, you can also customize the picker a bit more:
+
+```ruby
+let picker = MZLocationPickerController()
+picker.delegate = self
+picker.tintColor = .purple
+picker.annotation.image = #imageLiteral(resourceName: "custom_pin")
+picker.annotation.centerOffset = CGPoint(x: 0, y: 24)
+picker.mapType = .satellite
+picker.translator = self
+present(picker, animated: true, completion: nil)
+```
+
 ## Known issues
 
 - When map type is flyover, search is not displayed correctly. For best functionality, avoid using flyover map types.
