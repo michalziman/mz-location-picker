@@ -25,7 +25,7 @@ It is intended to be presented modally, though it is not necessary.
     DESC
 
     s.homepage         = 'https://github.com/michalziman/mz-location-picker'
-    s.screenshots      = 'https://github.com/michalziman/mz-location-picker/blob/master/screenshot1', 'https://github.com/michalziman/mz-location-picker/blob/master/screenshot2', 'https://github.com/michalziman/mz-location-picker/blob/master/screenshot3', 'https://github.com/michalziman/mz-location-picker/blob/master/screenshot4'
+    s.screenshots      = 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot1.png', 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot2.png', 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot3.png', 'https://raw.githubusercontent.com/michalziman/mz-location-picker/master/screenshot4.png'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'Michal Ziman' => 'michalziman@me.cz' }
     s.source           = { :git => 'https://github.com/michalziman/mz-location-picker.git', :tag => s.version.to_s }
@@ -34,9 +34,8 @@ It is intended to be presented modally, though it is not necessary.
 
     s.source_files = 'MZLocationPicker/**/*.swift'
 
-    s.resource_bundles = {
-      'MZLocationPicker' => ['MZLocationPicker/*.xib', 'MZLocationPicker/Images.xcassets/*', 'MZLocationPicker/MZLocationPickerHistory.xcdatamodeld']
-    }
+    s.resources = ['MZLocationPicker/*.xib', 'MZLocationPicker/Images.xcassets', 'MZLocationPicker/MZLocationPickerHistory.xcdatamodeld']
+
 
     s.frameworks = 'UIKit', 'MapKit', 'CoreData'
 end
