@@ -34,7 +34,7 @@ It is intended to be presented modally, though it is not necessary.
 
     s.source_files = 'MZLocationPicker/**/*.swift'
 
-    s.resources = ['MZLocationPicker/*.xib', 'MZLocationPicker/Images.xcassets', 'MZLocationPicker/MZLocationPickerHistory.xcdatamodeld']
+    s.resources = ['MZLocationPicker/*.xib', 'MZLocationPicker/*.xcassets', 'MZLocationPicker/MZLocationPickerHistory.xcdatamodeld']
 
 
     s.frameworks = 'UIKit', 'MapKit', 'CoreData'
