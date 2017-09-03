@@ -18,29 +18,23 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
     s.description      = <<-DESC
-This location picker allows user to choose location by tapping in map view or searching for it.
+This location picker allows user to choose location by tapping in map view, searching for it by name or address or by selecting recently picked location.
+It presents: reverse geocoding for location chosen in map, location search, history of chosen locations, multiple map types, custom pins, custom tint color, support for translations using delegate, landscape as well as portrait orientation.
 It is designed to match general picker design such as the one used in Contact picker.
 It is intended to be presented modally, though it is not necessary.
     DESC
 
-    s.homepage         = 'https://github.com/michalziman/MZLocationPicker'
+    s.homepage         = 'https://github.com/michalziman/mz-location-picker'
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2' #TODO
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'Michal Ziman' => 'michalziman@me.cz' }
-    s.source           = { :git => 'https://github.com/michalziman/MZLocationPicker.git', :tag => s.version.to_s }
-    # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+    s.source           = { :git => 'https://github.com/michalziman/mz-location-picker.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = '10.0'
 
-    s.source_files = 'MZLocationPicker/Classes/**/*'
+    s.source_files = 'MZLocationPicker/**/*.swift'
 
-    s.resources = 'MZLocationPicker/*.xib'
-    s.resource_bundles = {
-      'MZLocationPicker' => ['Pod/**/*.xib']
-    }
-# 'MZLocationPicker/Assets/*.png', 
+    s.resources = ['MZLocationPicker/*.xib', 'Images.xcassets/*']
 
-    # s.public_header_files = 'Pod/Classes/**/*.h'
-    # s.frameworks = 'UIKit', 'MapKit', 'CoreData'
-    # s.dependency 'AFNetworking', '~> 2.3'
+    s.frameworks = 'UIKit', 'MapKit', 'CoreData'
 end
