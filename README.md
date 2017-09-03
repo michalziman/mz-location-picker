@@ -52,7 +52,7 @@ present(picker, animated: true, completion: nil)
 
 ## Author
 
-Michal Ziman, ziman@reinto.cz
+Michal Ziman, michalziman@me.com
 
 ## License
 
