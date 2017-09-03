@@ -152,7 +152,7 @@ class MZLocationPickerView: UIView {
     
     func initSubviews() {
         // Load from nib
-        let nib = UINib(nibName: "LocationPickerView", bundle: Bundle(for: type(of:self)))
+        let nib = UINib(nibName: "MZLocationPickerView", bundle: Bundle(for: type(of:self)))
         nib.instantiate(withOwner: self, options: nil)
         
         contentView.frame = bounds
