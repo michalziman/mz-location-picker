@@ -43,13 +43,13 @@ extension MZLocationPickerController: MKMapViewDelegate {
                 annotationView.image = image
             } else {
                 let tc = tintColor ?? locationPickerView.tintColor ?? annotationView.tintColor ?? .blue
-                annotationView.image = UIImage(named: "pin_filled", in: Bundle(for: type(of:self)), compatibleWith: nil)?.tint(with: tc)
+                annotationView.image = UIImage(named: "pin", in: Bundle(for: type(of:self)), compatibleWith: nil)?.tint(with: tc)
             }
             
             if let annotationImageOffset = self.annotation.centerOffset {
                 annotationView.centerOffset = annotationImageOffset
             } else if let imageSize = annotationView.image?.size {
-                annotationView.centerOffset = CGPoint(x: 0, y: -imageSize.height/2)
+                annotationView.centerOffset = CGPoint(x: 0, y: -imageSize.height/2 + 2)
             }
         }
         
