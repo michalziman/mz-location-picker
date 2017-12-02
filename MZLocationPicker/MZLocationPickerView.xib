@@ -48,7 +48,7 @@
                     </items>
                 </navigationBar>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5hn-pz-NNJ">
-                    <rect key="frame" x="0.0" y="367" width="375" height="241"/>
+                    <rect key="frame" x="0.0" y="367" width="375" height="225"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="C7D-Si-bLh"/>
                     </constraints>
@@ -87,7 +87,7 @@
                     </constraints>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5R-r0-y9t">
-                    <rect key="frame" x="0.0" y="608" width="375" height="59"/>
+                    <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="901" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1n-4S-6PF">
                             <rect key="frame" x="8" y="10" width="42" height="41"/>
@@ -98,18 +98,18 @@ line 2</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-qe-OaL">
-                            <rect key="frame" x="335" y="13" width="32" height="33"/>
+                            <rect key="frame" x="335" y="14" width="32" height="33"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <state key="normal" title="Use"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="d1n-4S-6PF" secondAttribute="bottom" constant="8" id="FXt-lA-bWh"/>
+                        <constraint firstAttribute="bottom" secondItem="d1n-4S-6PF" secondAttribute="bottom" constant="24" id="FXt-lA-bWh"/>
                         <constraint firstItem="d1n-4S-6PF" firstAttribute="leading" secondItem="l5R-r0-y9t" secondAttribute="leading" constant="8" id="PUh-ec-Yof"/>
                         <constraint firstItem="d1n-4S-6PF" firstAttribute="top" secondItem="l5R-r0-y9t" secondAttribute="top" constant="10" id="ReD-fE-W17"/>
                         <constraint firstAttribute="trailing" secondItem="Ams-qe-OaL" secondAttribute="trailing" constant="8" id="U0Z-Cv-i4l"/>
-                        <constraint firstItem="Ams-qe-OaL" firstAttribute="centerY" secondItem="l5R-r0-y9t" secondAttribute="centerY" id="mZi-ko-so2"/>
+                        <constraint firstItem="Ams-qe-OaL" firstAttribute="centerY" secondItem="d1n-4S-6PF" secondAttribute="centerY" id="ss9-Uz-gNM"/>
                         <constraint firstItem="Ams-qe-OaL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d1n-4S-6PF" secondAttribute="trailing" constant="8" id="tg6-6O-nPY"/>
                     </constraints>
                 </view>
